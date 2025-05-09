@@ -1,0 +1,54 @@
+while True:
+    
+    selection = input("What convertor would you like?\ntemperature or currency?") #Ask user what they want
+
+    if selection == "temperature":
+        tempSelect = input("celsius or fahrenheit?") #choose celsius or fahrenheit
+
+        if tempSelect == "celsius":
+            celsius1 = float(input("Please enter your temperature in Celsius degree: "))
+            celsius2 = (celsius1 * 1.8) + 32 #convert to fahrenheit
+            print(f"{celsius1} in Fahrenheit is {celsius2} degrees Fahrenheit.")
+        elif tempSelect == "fahrenheit":
+            fahrenheit1 = float(input("Please enter your temperature in Fahrenheit degree: "))
+            fahrenheit2 = (fahrenheit1 - 32) * 5/9 #convert to celsius
+            print(f"{fahrenheit1} in Celsius is {fahrenheit2} degrees Celsius")
+        else:
+            print("Please enter a valid temperature") #alerts user to put something valid
+
+    if selection == "currency":
+        money = input("Which currency do you currently have? (pounds, euros or dollars)") #ask what they have
+        conversion = input("What currency would you like to convert to? (pounds, euros or dollars)") #ask what they want
+
+    if money == "pounds" and conversion == "euros":
+       inPounds = float(input("Enter how much pounds you currently have (£): "))
+       outEuros = inPounds * 1.17 #change from £ to €
+       print(f"£{inPounds} in euros is €{outEuros}")
+        
+    elif money == "pounds" and conversion == "dollars":
+        inPounds = float(input("Enter how much pounds you currently have (£): "))
+        outDollars = inPounds * 1.33 #change from £ to $
+        print(f"£{inPounds} in dollars is ${outDollars}")
+
+    elif money == "euros" and conversion == "dollars":
+        inEuros = float(input("Enter how much euros you currently have (€):"))
+        outDollars = inEuros * 1.12 #change from € to $
+        print(f"€{inEuros} in dollars is ${outDollars}")
+
+    elif money == "euros" and conversion == "pounds":
+        inEuros = float(input("Enter how much euros you currently have (€): "))
+        outPounds = inEuros * 0.83 #change from € to £
+        print(f"€{inEuros} in pounds is £{outPounds}")
+
+    elif money == "dollars" and conversion == "pounds":
+        inDollars = float(input("Enter how much dollars you currently have ($): "))
+        outPounds = inDollars * 0.75 #change from $ to £
+        print(f"${inDollars} in pounds is £{outPounds}")
+
+    elif money == "dollars" and conversion == "euros":
+        inDollars = float(input("Enter how much dollars you currently have ($): "))
+        outEuros = inDollars * 0.89 #change from $ to €
+        print(f"${inDollars} in euros is €{outEuros}")
+    else: 
+        print("Please enter a valid currency") #alerts user to put something valid
+
